@@ -1,36 +1,37 @@
+// Định nghĩa phần background dùng chung cho footer
+.bg-step (@background, @background-position, @padding-top , @padding-left, @line-height){
+    background: @background;
+    background-position: @background-position;
+    padding-top: @padding-top;
+    padding-left: @padding-left;
+    line-height: @line-height;
+}
 // Phần footer bên trên
 .footer-top {
     clear: left;
-    max-width: 1920px;
-    box-sizing: border-box;
     margin: 0 auto;
     max-height: 665px;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20.3125%;
     background: url('../../assets/images/Background.png') no-repeat center center;
     h2 {
         position: absolute;
-        font-size: 2.18vw;
         top: 16.8%;
         left: 42.6%;
-        letter-spacing: 0.7px;
-        color: #000000;
+        .style--text (#000, 42px, 0.7px, 1);
         font-weight: 600;
-        font-family: "Poppins";
-        text-align: center;
         text-transform: uppercase;      
     }
     h3 {
-        font-size: 4.5vw;
-        color: #ebebeb;
+        .style--text (#ebebeb, 4.5vw, 1px, 1);
         font-weight: 600;
-        font-family: "Poppins";
         text-align: center;
-        letter-spacing: 1px;
         text-transform: uppercase;
-        padding-top: 4.6%
+        padding-top: 7.6%;
     }
     &--img {
-        max-width: 1140px;
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
@@ -47,40 +48,39 @@
                 &:last-child {
                     margin-right: 0%;
                 }
-            }
-            img {
-                   width: 100%;
-            }
-            div {
-                width: 100%;
-                text-align: left;
-                h4 {
-                    margin-top: 6.1%;
-                    letter-spacing: 0.3px;
-                    max-width: 356px;
-                    width: 100%;
-                    height: 60px;
-                    font-size: 16px;
-                    line-height: 1.56;
-                    color: #000000;
-                    font-weight: 600;
-                    font-family: "Poppins";
-                }
-                p {
-                    margin-top: -0.3%;
-                    letter-spacing: 0.3px;
-                    line-height: 1.5;
-                    color: #000000;
-                    font-weight: 600;
-                    font-family: "Poppins";
-                    font-size: 12px;
-                    margin-bottom: 27%;
-                    span {
-                        color: #81cfdf;
+                a{
+                    display: flex;
+                    img {
+                        width: 100%;
                     }
                 }
-                
+                div {
+                    width: 100%;
+                    text-align: left;
+                    .a-text {
+                        .style--text (#000, 16px, 0.3px, 1.56);
+                        margin-top: 6.7%;
+                        max-width: 356px;
+                        width: 100%;
+                        height: 60px;
+                        font-weight: 600;
+                        text-decoration: none;
+                    }
+                    p {
+                        margin-top: -0.3%;
+                        .style--text (#000, 12px, 0.3px, 1.5);
+                        font-weight: 600;
+                        margin-bottom: 27%;
+                        a {
+                            color: #81cfdf;
+                            text-decoration: none;
+                            display: inline;
+                        }
+                    }
+                    
+                }
             }
+
         }
     }
 }
@@ -97,83 +97,72 @@
         display: block;
         &--text {
             p {
-                font-size: 32px;
-                padding-top: 101px;
-                letter-spacing: -0.4px;
-                line-height: 26px;
-                color: #ffffff;
+                .style--text (#fff, 32px, -0.4px, 0.8);
+                padding-top: 100px;             
                 font-weight: 600;
-                font-family: "Poppins";
                 text-align: center;
             }
             span {
-                font-size: 14px;
-                line-height: 66px;
-                letter-spacing: 0.1px;
-                color: #ffffff;
-                font-weight: 500;
-                font-family: "Poppins";
+                .style--text (#fff, 14px, 0.1px, 4.9);
                 text-align: center;
             }
         }
         &--div {
-            padding-bottom: 62px;
+            padding-bottom: 60px;
             &--border{
                 max-width: 770px;
                 height: 70px;
                 border-radius: 100px;
                 background-color: white;
                 margin: 38px auto;
+                padding-top: 6px;
                 input {
                     width: 70%;
-                    padding-left: 3%;
-                    margin-top: 20px;
-                    margin-right: 2%;
+                    padding-left: 1.6%;
+                    margin-top: 13px;
                     height: 30px;
-                    font-size: 13px;
-                    line-height: 30px;
-                    color: #8f8f8f;
+                    .style--text (#8f8f8f, 13px, 0, 2.34);
                     font-weight: 400;
-                    font-family: "Poppins";
-                    border: none;            
+                    border: none; 
+                    outline: 0;           
                 }
                 button {
                     width: 22%;
-                    height: 60px;
+                    height: 58px;
                     background-color: #0ca8c9;
                     border-radius: 30px;
-                    font-size: 16px;
-                    line-height: 30px;
-                    color: #ffffff;
-                    font-weight: 500;
-                    font-family: "Poppins";
+                    margin-right: 8px;
+                    float: right;
+                    .style--text (#fff, 16px, 0, 2);
                     text-align: center;
                     border: none;
+                    outline: 0;
+                    &:hover {
+                        color: rgb(135, 192, 28);
+                        cursor: pointer;
+                    }
                 }
             }           
         }
     }
     &__two {
+        width: 100%;
+        box-sizing: border-box;
         display: flex;
         ul {
-            box-sizing: border-box;
-            max-width: 1140px;
-            width: 100%;
+            width: auto;
             height: 100%;
             margin: 0 auto;
-            padding-top: 56px;
-            padding-bottom: 56px;
+            box-sizing: border-box;
             li {
                 float: left;
                 display: block;
-                max-width: 18%;
-                width: auto;
-                margin-right: 2.6%;
-                img {
-                    width: 100%;
+                margin: 58px 15px;
+                a {
+                    display: flex;
                 }
-                &:last-child {
-                    margin-right: 0%;
+                img {
+                    // width: 100%;
                 }
             }
         }
@@ -184,18 +173,23 @@
         width: auto;
         display: flex;
         overflow: hidden;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20.3125%;
         &--border {
             clear: left;
-            max-width: 1140px;
             width: 100%;
             max-height: 316px;
             height: auto;
-            margin: 0 auto 2.5% auto;
+            margin: 0 auto 47px auto;
             ul {
                 display: block;
                 height: 100%;
-                padding-top: 59px;
+                padding-top: 57px;
                 li {
+                    .xp {
+                        word-spacing: 2px;
+                    }
                     float: left;
                     max-width: 195px;
                     width: 17.1%;
@@ -205,54 +199,61 @@
                         max-width: 294px;
                         width: 25.79%;
                         padding-right: 2%;
+                        div {
+                            padding-top: 15px;
+                        }
                     }
                     &:last-child {
                         margin-right: -3%;
                     }
-                    h3 {
-                        font-size: 18px;
-                        color: #000000;
+                    a {
+                        .style--text (#000, 18px, 0.2px, 1);
                         font-weight: 600;
-                        font-family: "Poppins";
                         text-transform: uppercase;
                         text-align: left;
+                        display: block;
+                        width: 100%;
+                        text-decoration: none;
+                        &:hover {
+                            color: #0ca8c9;
+                        }
                     }
                     div {
-                        padding-top: 11px;
-                        p {
-                            font-size: 13px;
-                            line-height: 36px;
-                            color: #8f8f8f;
-                            font-weight: 500;
-                            font-family: "Poppins";
+                        padding-top: 13px;
+                        a {
+                            display: block;
+                            .style--text (#8f8f8f, 13px, 0, 2.78);
                             text-align: left;
+                            text-transform: none;
                         }
-                        p.step1 {
-                            background: url('../../assets/images/poin.png') no-repeat;
-                            background-position: left;
-                            padding-top: 9.5px;
-                            padding-left: 14%;
-                            line-height: 21px;
+                        a.step1 {
+                            .bg-step (url('../../assets/images/poin.png') no-repeat, left, 7.5px , 38px, 21px);
                         }
-                        p.step2 {
-                            background: url('../../assets/images/nav1_mail.png') no-repeat;
-                            background-position: left bottom;
-                            padding-top: 13.7px;
-                            padding-left: 14%;
-                            line-height: 12px;
+                        a.step2 {
+                            .bg-step (url('../../assets/images/nav1_mail.png') no-repeat, left bottom, 13.7px , 36px, 12px);
+                            letter-spacing: 0.3px;
                         }
-                        p.step3 {
-                            background: url('../../assets/images/Phone.png') no-repeat;
-                            background-position: left bottom;
-                            padding-top: 17px;
-                            padding-left: 13.7%;
-                            line-height: 12px;
+                        a.step3 {
+                            .bg-step (url('../../assets/images/Phone.png') no-repeat, left bottom, 17px , 36px, 12px);
+                            letter-spacing: 0.2px;
                         }
                     }
-                    .iconz {
-                        height: 13px;
-                        background: url('../../assets/images/Social2.png') no-repeat;
-                        margin-top: 42px;
+                    .icon-mxh {
+                        margin-top: 20px;
+                        text-align: left;
+                        display: block;
+                        margin-left: -1px;
+                        a {
+                            display: inline;
+                            padding-right: 21px;
+                            font-size: 13px;
+                            line-height: 30px;
+                            i {
+                                &:hover {
+                                    color: #0ca8c9;
+                                }
+                            } 
+                        }
                     }
                 }
             }
@@ -260,10 +261,11 @@
     }
     &__four {
         height: 68px;
-        max-width: 1140px;
-        width: 100%;
         margin: 0 auto;
         overflow: hidden;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20.3125%;
         p {
             float: left;
             text-align: center;
@@ -274,16 +276,19 @@
             font-family: "Poppins";
             height: 100%;
             letter-spacing: 0.1px;
-            span {
+            a {
                 color: #0ca8c9;
+                text-decoration: none;
             }
         }
         .obito {
-            background: url(../../assets/images/Logos.png) no-repeat;
-            background-position: center;
-            height: 100%;
             float: right;
-            width: 31%;
+            display: flex;
+            height: 100%;
+            a {
+                display: block;
+                margin: auto;
+            }
         }
     }
 }

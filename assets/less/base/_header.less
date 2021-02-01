@@ -1,3 +1,48 @@
+// Định nghĩa các thuộc tính chung để mixin
+.bg-nav1 (@background) {
+  background: @background;  
+  background-position: center center;
+}
+//Định nghĩa thuộc tính chung của các icon
+.icon-nav1 (@font-size, @line-height, @color){
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+  text-align: center;
+}
+.fa-search {
+  .icon-nav1 (16px, 33px, #ffffff);
+  letter-spacing: 6px;
+}
+.fa-cog {
+  .icon-nav1 (26px, 24px, #0ca8c9);
+}
+.fa-shopping-cart{
+  .icon-nav1 (26px, 24px, #0ca8c9);
+}
+//Định nghĩa nút next và back ở slide
+.fa-control (@top) {
+  top: @top;
+  right: 18px;
+  position: absolute;
+  font-size: 31px;
+  line-height: 20px;
+}
+//Định nghĩa background next và back ở slide
+.background-control{
+  position: absolute;
+  top: 46%;
+  width: 60px;
+}
+//Định nghĩa thuộc tính chung của các thẻ text
+.style--text (@color, @font-size, @letter-spacing, @line-height){
+  color: @color;
+  font-size: @font-size;
+  letter-spacing: @letter-spacing;
+  line-height: @line-height;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
 // Định nghĩa phần khung
 body {
   max-width: 1920px;
@@ -10,7 +55,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
-  padding: 0 19.84%;
+  padding: 0 20.3125%;
   height: 72px;
   background-color: #222222;
   ul {
@@ -22,27 +67,24 @@ body {
       width: 33%;
       height: 100%;
       overflow: hidden;
-      margin-right: -5.1%;
+      margin-right: -4.6%;
       &:nth-child(2) {
-        margin-right: -11.1%;
+        margin-right: -10.8%;
       }
       .icon-img {
         float: left;
-        width: 30px;
-        height: 30px;
-        margin: 21px 3.3%;
+        width: 32px;
+        height: 32px;
+        margin: 20px 3.3% 20px 0;
         border: 1px solid #0ba7c9;
         &.nav1--img1 {
-          background: url("../../assets/images/poin.png") no-repeat;  
-          background-position: center center;
+          .bg-nav1 (url('../../assets/images/poin.png') no-repeat);
         }
-        &.nav1--img2 {
-          background: url("../../assets/images/nav1_mail.png") no-repeat;   
-          background-position: center center; 
+        &.nav1--img2 {   
+          .bg-nav1 (url('../../assets/images/nav1_mail.png') no-repeat);
         }
         &.nav1--img3 {
-          background: url("../../assets/images/nav1_call.png") no-repeat; 
-          background-position: center center;   
+          .bg-nav1 (url('../../assets/images/nav1_call.png') no-repeat); 
         }
       }
       .nav1--text {
@@ -50,22 +92,12 @@ body {
         float: left;
         height: auto;
         width: 80%;
-        margin-top: 18px;
+        margin-top: 21px;
         span {
-          color: #a6a6a6;
-          font-size: 1.3em;
-          letter-spacing: -0.3px;
-          line-height: 1.4;
-          font-weight: 500;
-          font-family: 'Poppins', sans-serif;
+          .style--text (#a6a6a6, 12px, 0.1px, 12px);
         }
         p {
-          color: #ffffff;
-          font-size: 1.16em;
-          letter-spacing: 0.3px;
-          line-height: 1.6;
-          font-weight: 500;
-          font-family: 'Poppins', sans-serif;
+          .style--text (#ffffff, 12px, 0.1px, 24px);
         }
       }
     }
@@ -76,19 +108,19 @@ body {
     height: 100%;
     float: right;
     padding-top: 26px;
-    select {           
-      background: url("../../assets/images/Flag.png") no-repeat;
+    select { 
+      cursor: pointer;
+      background: url('../../assets/images/Flag.png') no-repeat;
       background-position: left center;
-      width: 50%;
+      width: 114px;
       border: none;
-      font-size: 0.8rem;
-      padding-left: 10%;
-      line-height: 1;
-      color: #bababa;
-      font-weight: 500;
-      font-family: 'Poppins', sans-serif;
+      .style--text (#bababa, 12px, 0, 13px);
+      padding-left: 23px;
       float: right;
-      margin-right: 2%;
+      margin-right: -4px;
+      &:focus {
+        outline: 0;
+      }
     } 
   }
 }
@@ -97,15 +129,17 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 99px;
-  padding-left: 20.3%;
+  padding: 0 20.3125%;
   &__left {
     display: block;
     clear: left;
     float: left;
     width: 25%;
     height: 100%;
-    background: url('../../assets/images/header_logo.png') no-repeat;
-    background-position: left center;
+    a {
+      display: block;
+      padding-top: 9%;
+    }
   }
   &__right {
     display: block;
@@ -114,58 +148,62 @@ body {
     height: 99px;
     width: 75%;
     padding-top: 28px;
-    padding-left: 6.8%;
+    padding-left: 17.5%;
     &--border {
       position: relative;
       float: left;
       height: 41px;
-      width: 48%;
+      width: 80%;
       border: 1px solid #ebebeb;
       border-radius: 30px;
       border-right: none;
-      padding: 0px 1.6%;
+      padding-left: 19px;
       & select {
-        width: 23.5%;
+        width: 21.5%;
+        min-width: 90px;
         height: 100%;
         border: none;
-        font-size: 12px;
-        line-height: 24px;
-        color: #8f8f8f;
         background: none;
-        font-weight: 500;
-        font-family: 'Poppins', sans-serif;
+        .style--text (#8f8f8f, 12px, 0, 24px);
+        &:focus {
+          outline: 0;
+        }
       }
       & input {
-        width: 62%;
-        letter-spacing: 0.2px;
-        padding-left: 4%;
-        margin-left: 5.5%;
+        .style--text (#8f8f8f, 12px, 0.2px, 24px); 
+        width: 62%;            
+        padding-left: 3.5%;
+        margin-left: 5.3%;
         border: none;
         border-left: 1px solid #e0e0e0;
-        font-size: 12px;
-        line-height: 24px;
-        color: #8f8f8f;
-        font-weight: 500;
-        font-family: 'Poppins', sans-serif;
+        &:focus {
+          outline: 0;
+        }
       }
       & button {
         border-radius: 0 30px 30px 0;
         position: absolute;
-        top: 1%;
-        right: -11.2%;
-        height: 100%;
-        width: 12%;
+        top: -1px;
+        right: -6.8%;
+        height: 41px;
+        width: 11.6%;
         background-color: #20acca;
         border: none;
+        &:focus {
+          outline: 0;
+        }
+        &:hover {
+          background-color: #3d5f66;
+        }
       }
     }
     &--img {
       display: block;
-      width: 30%;
-      padding: 8px 6% 0 7.3%;
-      float: left;
+      width: 20%;
+      padding: 8px 0% 0 8%;
+      float: right;
       &--a {
-        padding-right: 11%;
+        padding-right: 20%;
         float: left;
       }
       &--x {
@@ -176,13 +214,27 @@ body {
         &--b {
           position: absolute;
           top: -2px;
-          left: 13px;
+          left: 19px;
+          width: 16px;
+          height: 16px;
+          text-align: center;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 8px;
+          background: black;
+
+          p {
+            line-height: 16px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+          }
         }
       }
     }
   }
 }
-
 //Phần chứa thanh nav thứ 2
 .nav2 {
   clear: both;
@@ -193,24 +245,22 @@ body {
   box-sizing: border-box;
   &__over {
     box-sizing: border-box;
-    background-image: url('../../assets/images/Overflow.png');
-    width: 15%;
+    background: url('../../assets/images/Overflow.png') no-repeat;
+    width: 25%;
     height: 100%;
     background-size: 30px 22px;
-    background-repeat: no-repeat;
     background-position: center left;
     float: left;
-    color: #ffffff;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 3%;
+    padding-left: 46px;
     position: relative;
+    &:hover {
+      cursor: pointer;
+    }
     span {
       display: block;
       height: 100%;
-      line-height: 50px;
-      letter-spacing: -.6px;
-      font-size: 1.5em;
+      .style--text (#ffffff, 14px, 0, 50px);
+      font-weight: 600;
     }
     ul {
       display: none;
@@ -265,10 +315,8 @@ body {
           }
         }
         span {
+          .style--text (#0ca8c9, 15px, 0, 45px);
           float: right;
-          font-size: 15px;
-          line-height: 45px;
-          color: #0ca8c9;
           font-weight: 400;
           font-family: 'Open Sans', sans-serif;
           font-size: large;
@@ -281,30 +329,41 @@ body {
   }
   &__right {
     box-sizing: border-box;
-    width: 85%;
+    width: 75%;
     display: block;
     float: left;
     height: 100%;
-    padding-left: 21%;
+    padding-left: 9.1%;
     ul {
-      display: inline-block;
+      display: block;
       height: 100%;
       width: 100%;
       li {
         float: left;
         height: 100%;
         width: auto;
-        padding-right: 5.96%;
+
+        &:nth-child(2) {
+          a {
+            padding-left: 32px;
+          }
+        }
+        &:nth-child(4) {
+          a {
+            padding-right: 26px;
+          }
+        }
         a {
           display: inline-block;
-          font-size: 14px;
-          line-height: 50px;
-          color: #ffffff;
+          .style--text (#ffffff, 14px, 0, 50px);
           font-weight: 600;
-          font-family: 'Poppins', sans-serif;
           text-align: right;
           text-transform: uppercase;
           text-decoration: none;
+          padding: 0 29px;
+          &:hover {
+            color: rgb(30, 78, 167);
+          }
         }
       }
     }
@@ -312,12 +371,7 @@ body {
 }
 // Khai báo thuộc tính chung của thẻ h trong mục banner để gọi lại
 .banner--h {
-  font-size: 3.6vw;
-  line-height: 1;
-  letter-spacing: 1.4px;
-  color: #000000;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  .style--text (#000000, 3.6vw, 1.3px, 1);
   margin-bottom: 3.6%;
 }
 //Phần banner chứa slider
@@ -330,6 +384,7 @@ body {
   overflow: hidden;
   img{
     width: 100%;
+    height: 37.5%;
   }
   &__text{
     position: absolute;
@@ -344,16 +399,11 @@ body {
     }
     h3 {
       .banner--h;
-      line-height: 0.9;
+      line-height: 0.92;
     }
     p {
       margin-top: 3.4%;
-      letter-spacing: 0.1px;
-      font-size: 18px;
-      line-height: 2.3;
-      color: #8f8f8f;
-      font-weight: 500;
-      font-family: 'Poppins', sans-serif;
+      .style--text (#8f8f8f, 18px, 0.1px, 2.3);
     }
   }
   &__a {
@@ -361,40 +411,45 @@ body {
     top: 64.7%;
     left: 20.3%;
     border-bottom: 2px solid #0ca8c9;
-    line-height: 1.8;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    width: 4.3%;
     a {
-      font-size: 16px;
+      .style--text (#000000, 16px, 0, 1.8);
+      font-weight: 600;
       text-decoration: none;
-      color: #000000;     
     }
   }
   &__slide {
     &--pew {
-      position: absolute;
-      top: 46%;
+      .background-control;
       left: 1%;
+      border-top: 60px solid #ffffff;
+      border-right: 10px solid transparent;
       .fa-angle-left {
-        position: absolute;
-        top: 30%;
-        left: 35%;
-        font-size: 31px;
-        line-height: 20px;
+        .fa-control (-40px);
+      }
+      &:hover {
+        border-top: 60px solid #0ca8c9;
+        a {
+          i {
+            color: #ffffff;
+          }
+        }
       }
     }
     &--next {
-      position: absolute;
-      top: 46%;
+      .background-control;
       right: 1%;
+      border-bottom: 60px solid #ffffff;
+      border-left: 10px solid transparent;
       .fa-angle-right {
-        position: absolute;
-        top: 30%;
-        right: 35%;
-        font-size: 31px;
-        line-height: 20px;
-        color: white;
+        .fa-control (20px);
+      }
+      &:hover {
+        border-bottom: 60px solid #0ca8c9;
+        a {
+          i {
+            color: #ffffff;
+          }
+        }
       }
     }
   }

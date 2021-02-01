@@ -1,39 +1,57 @@
+.fas1 {
+  font-size: 32px;
+  line-height: 26px;
+  color: #cfcfcf;
+  margin-left: 26px;
+  &:hover {
+    color: #0ca8c9;
+  }
+}
+
+
 //Phần nội dung thứ 3
 .nav3 {
   display: block;
-  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20.3125%;
   height: 163px;
   margin: 0 auto 0 auto;
   &__a {
     display: block;
     height: 100%;
     ul {
-      display: block;
-      padding-top: 5.5%;
+      display: flex;
+      padding-top: 60px;
       height: 100%;
       li {
         display: block;
         float: left;
         width: 25%;
-        img {
-          float: left;
-          margin-right: 7%;
+        a {
+          text-decoration: none;
+          display: block;
+          overflow: hidden;
+          img {
+            float: left;
+            margin-right: 7%;
+          }
+          .nav3__a--text {
+            float: left;
+            padding-top: 3px;
+            h2 {
+              .style--text (#000, 16px, -0.1px, 1.3333);
+              margin-top: -4px;
+              font-weight: bold;
+            }
+            p {
+              .style--text (#8f8f8f, 14px, -0.1px, 1.9);
+              font-weight: 400;      
+            }
+          }
         }
-        h2 {
-          font-size: 16px;
-          line-height: 14px;
-          color: #000000;
-          letter-spacing: -0.1px;
-          font-family: 'Poppins', sans-serif;
-          font-weight: bold;
-        }
-        p {
-          font-size: 14px;
-          letter-spacing: -0.1px;
-          line-height: 30px;
-          color: #8f8f8f;
-          font-weight: 400;
-          font-family: 'Poppins', sans-serif;
+        &:first-child img {
+          margin-top: 1px;
         }
         &:nth-child(2) img {
           margin-left: 2%;
@@ -43,17 +61,18 @@
         }   
         &:nth-child(4) img {
           margin-left: 10%;
-        }                
+        }    
       }
     }
   }
 }
 //Phần nội dung thứ 4
 .nav4 {
-  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20.3125%;
   max-height: 510px;
   margin: 0 auto 0 auto;
-  box-sizing: border-box;
   display: flex;
   &__left {
     position: relative;
@@ -86,20 +105,14 @@
             margin-right: 0px;
           }
           span {
-            font-size: 21px;
-            letter-spacing: -1px;
-            line-height: 2.4;
-            color: #0ca8c9;
+            .style--text (#0ca8c9, 21px, -1px, 2.4);
             font-weight: 600;
-            font-family: 'Poppins', sans-serif;
             text-align: center;
           }
           p {
-            font-size: 12px;
+            .style--text (#000, 12px, 0, 1);
             margin-top: -24%;
-            color: #000000;
             font-weight: 600;
-            font-family: 'Poppins', sans-serif;
             text-align: center;
             font-weight: bold;
           }
@@ -115,22 +128,13 @@
       h4 {
         clear: left;
         padding-top: 10%;
-        font-size: 30px;
-        letter-spacing: 0.2px;
+        .style--text (#000000, 30px, 0.2px, 1);
         text-align: center;
-        line-height: 1;
-        color: #000000;
         font-weight: 600;
-        font-family: 'Poppins', sans-serif;
       }
       p {
-        line-height: 2.4;
-        color: #8f8f8f;
-        font-size: 16px;
-        font-weight: 500;
-        font-family: 'Poppins', sans-serif;
+        .style--text (#8f8f8f, 16px, 0.5px,2.4);
         text-align: center;
-        letter-spacing: 0.5px;
         span {
             color: #0ca8c9;
         }
@@ -154,35 +158,23 @@
         top: 31%;
         left: 6%;
         h3 {
-          font-size: 60px;
-          line-height: 0.5;
-          color: #0ca8c9;
-          letter-spacing: -1.5px;
+          .style--text (#0ca8c9, 60px, -1.5px, 0.5);
           font-weight: 600;
-          font-family: "Poppins";
         }
         h4 {
-          font-size: 24px;
-          line-height: 1.3;
-          color: #000000;
+          .style--text (#000000, 24px, 0, 1.3);   
           font-weight: 600;
-          font-family: "Poppins";
           text-transform: uppercase;
           margin-top: 11px;
         }
         p {
-          font-size: 18px;
-          line-height: 1.8;
-          color: #8f8f8f;
+          .style--text (#8f8f8f, 18px, -0.1px, 1.8);
           font-weight: 400;
-          font-family: "Poppins";
-          letter-spacing: -0.1px;
         }
       }     
     }
     &--dow {
       position: relative;
-      max-width: 458px;
       max-height: 238px;
       width: auto;
       height: auto;
@@ -194,23 +186,15 @@
         top: 42%;
         left: 6%;
         h4 {
-          font-size: 30px;
-          line-height: 0.4;
-          letter-spacing: 0.4px;
-          color: #000000;
+          .style--text (#000, 30px, 0.4px, 0.4);
           font-weight: 600;
-          font-family: "Poppins";
           text-transform: uppercase;
           margin-bottom: 2px;
         }
         p {
-          font-size: 18px;
-          line-height: 2.7;
-          color: #8f8f8f;
+          .style--text (#8f8f8f, 18px, -0.2px, 2.7);
           font-weight: 400;
-          font-family: "Poppins";
           margin-top: 1px;
-          letter-spacing: -0.2px;
         }
       }        
     }
@@ -220,7 +204,9 @@
 .nav5 {
   clear: left;
   display: flex;
-  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20.3125%;
   max-height: 183px;
   margin: 0 auto 0 auto;
   box-sizing: border-box;
@@ -230,61 +216,43 @@
     display: block;
     padding-top: 4%;
     padding-bottom: 4.2%;
-    width: 90%;
+    width: 80%;
     height: 100%;
     h2 {
-      font-size: 4.65vw;
-      color: #f5f5f5;
+      .style--text (#f5f5f5, 4.65vw, 0, 1);
       font-weight: 600;
-      font-family: "Poppins";
       text-align: left;
     }
     h3 {
-      font-size: 2.15vw;
+      font-size: 42px;
       color: #000000;
       font-family: 'Poppins', sans-serif;
       text-transform: uppercase;
       font-weight: bold;
-      letter-spacing: 0.4px;
       position: absolute;
       top: 39%;
       left: 0px;
     }
   }
   &__right {
-    float: left;
+    float: right;
     display: block;
     box-sizing: border-box;
-    width: 10%;
+    width: 20%;
+    min-width: 120px;
     height: auto;
-    padding-top: 7.2%;
-    padding-left: 4.5%;
-    &--back { 
-      border: 1px solid #cfcfcf;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 8px 12px 12px 8px;
-      margin-right: 8px;
-      transform: rotate(135deg);
-      -webkit-transform: rotate(135deg);
-      font-size: 48px;
-      line-height: 26px;
-    }
-    &--next {
-      border: solid #0ca8c9;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 8px 12px 12px 8px;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-    }
+    text-align: right;
+    padding-top: 7%;
   }
 }
 //Phần nội dung của nav6 
 .nav6 {
   clear: left;
-  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20.3125%;
   max-height: 810px;
+  height: 100%;
   display: flex;
   margin: 0 auto 0 auto;
   &__img-top {
@@ -313,7 +281,7 @@
           text-decoration: none;
           font-family: 'Poppins', sans-serif;
           height: auto;
-          margin-bottom: 22.4%;
+          margin-bottom: 22.9%;
           img {
             width: 100%;
           }
@@ -324,18 +292,13 @@
             text-align: center;
             a {
               text-decoration: none;
-              font-size: 14px;
-              line-height: 1.63;
-              color: #000000;
+              .style--text (#000, 14px, 0.2px, 1.63);
               font-weight: 600;
-              letter-spacing: 0.2px;
             }
             p {
-              font-size: 13px;
+              .style--text (#0ca8c9, 13px, 0, 1);
               padding-top: 5%;
-              color: #0ca8c9;
               font-weight: 600;
-              font-family: 'Poppins', sans-serif;
               text-align: center;
               span {
                 text-decoration-line:line-through;
