@@ -1,8 +1,83 @@
-@import 'reset.less';
-@import 'base/_header.less';
-@import 'base/_footer.less';
-@import 'content/_home_page_content.less';
+@import '_reset';
+
+@color1: #0ca8c9;
+@color2: #fff;
+@color3: #8f8f8f;
+@color4: #000;
+// Định nghĩa các thuộc tính chung để mixin
+.bg-nav1 (@__background) {
+    background: @__background;  
+    background-position: center center;
+}
+//Định nghĩa thuộc tính chung của các icon
+.icon-nav1 (@__font-size, @__line-height, @__color) {
+    font-size: @__font-size;
+    line-height: @__line-height;
+    color: @__color;
+    text-align: center;
+}
+.fa-search {
+    .icon-nav1 (16px, 33px, @color2);
+    letter-spacing: 6px;
+}
+.fa-cog {
+    .icon-nav1 (26px, 24px, @color1);
+}
+.fa-shopping-cart{
+    .icon-nav1 (26px, 24px, @color1);
+}
+//Định nghĩa nút next và back ở slide
+.fa-control (@__top) {
+    top: @__top;
+    right: 18px;
+    position: absolute;
+    font-size: 31px;
+    line-height: 20px;
+}
+  //Định nghĩa background next và back ở slide
+.background-control {
+    position: absolute;
+    top: 46%;
+    width: 60px;
+}
+  //Định nghĩa thuộc tính chung của các thẻ text
+.style--text (@__color, @__font-size, @__letter-spacing, @__line-height) {
+    color: @__color;
+    font-size: @__font-size;
+    letter-spacing: @__letter-spacing;
+    line-height: @__line-height;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+.fas1 {
+    font-size: 32px;
+    line-height: 26px;
+    color: #cfcfcf;
+    margin-left: 26px;
+    &:hover {
+      color: @color1;
+    }
+}
+// Định nghĩa phần background dùng chung cho footer
+.bg-step (@__background, @__background-position, @__padding-top , @__padding-left, @__line-height) {
+    background: @__background;
+    background-position: @__background-position;
+    padding-top: @__padding-top;
+    padding-left: @__padding-left;
+    line-height: @__line-height;
+}
+// Định nghĩa phần background dùng chung cho reponsive
+.text-hidden (@__webkit-line) {
+    -webkit-line-clamp: @__webkit-line;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+//import các file còn lại
+@import '_header';
+@import '_footer';
+@import '_home';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css';
 @import 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap';
-@import 'responsive.less';
+@import '_responsive';

@@ -1,3 +1,4 @@
+
 // reponsive cho màn hình 1919px
 @media only screen and (max-width:1919px) {
   .nav1 {
@@ -186,10 +187,7 @@
 
             padding: 7% 5% 0 7%;
             a {
-              overflow: hidden;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
-              display: -webkit-box;
+              .text-hidden (2);
             }
             p {
               font-size: 12px;
@@ -208,11 +206,8 @@
           div {
             .a-text {
               height: unset;
-              overflow: hidden;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
-              display: -webkit-box;
               font-size: 15px;
+              .text-hidden (2);
             } 
             p {
               line-height: 2.5;
@@ -726,10 +721,7 @@
               }
               p {
                 font-size: 12px;
-                overflow: hidden;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-                display: -webkit-box;
+                .text-hidden (1);
               }
             }
           }
@@ -902,16 +894,17 @@
       display: inline-block;
       &--border {
         max-height: unset;
-        margin: 0 auto 0px 40px;
+        margin: 0;
         ul {
           display: inline-block;
-          padding-top: 40px;
+          padding-top: 48px;
+          width: 95%;
           li {
             &:first-child div{
               padding-top: 0px;
               margin-top: 12px;
             }
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             width: 50% !important;
             a {
               font-size: 15px;
@@ -929,6 +922,9 @@
             }
             &:first-child {
               padding-right: 6%;
+            }
+            &:nth-child(3) {
+              padding-left: 0;
             }
           }
         }
@@ -1127,9 +1123,9 @@
       &--border {
         margin-left: 20px;
         ul {
-          padding-top: 20px;
+          padding-top: 35px;
           li {
-            margin-bottom: 0;
+            margin-bottom: 25px;
             &:first-child {
               padding-right: 0;
             }
@@ -1156,10 +1152,7 @@
             }
             a.step3 {
               padding-left: 20px !important;
-              overflow: hidden;
-              -webkit-line-clamp: 1;
-              -webkit-box-orient: vertical;
-              display: -webkit-box;
+              .text-hidden (1);
             }
           }
         }

@@ -1,11 +1,3 @@
-// Định nghĩa phần background dùng chung cho footer
-.bg-step (@background, @background-position, @padding-top , @padding-left, @line-height) {
-    background: @background;
-    background-position: @background-position;
-    padding-top: @padding-top;
-    padding-left: @padding-left;
-    line-height: @line-height;
-}
 // Phần footer bên trên
 .footer-top {
     clear: left;
@@ -20,7 +12,7 @@
         position: absolute;
         top: 16.8%;
         left: 42.6%;
-        .style--text (#000, 2.19vw, 0.7px, 1);
+        .style--text (@color4, 2.19vw, 0.7px, 1);
         font-weight: 600;
         text-transform: uppercase;      
     }
@@ -41,7 +33,6 @@
             height: auto;
             display: flex;
             flex-wrap: wrap;
-            box-sizing: border-box;
             li {
                 margin-right: 2.63%;
                 width: 31.58%;
@@ -58,7 +49,7 @@
                     width: 100%;
                     text-align: left;
                     .a-text {
-                        .style--text (#000, 16px, 0.3px, 1.56);
+                        .style--text (@color4, 16px, 0.3px, 1.56);
                         margin-top: 6.7%;
                         max-width: 356px;
                         width: 100%;
@@ -68,7 +59,7 @@
                     }
                     p {
                         margin-top: -0.3%;
-                        .style--text (#000, 12px, 0.3px, 1.5);
+                        .style--text (@color4, 12px, 0.3px, 1.5);
                         font-weight: 600;
                         margin-bottom: 27%;
                         a {
@@ -96,13 +87,13 @@
         display: block;
         &--text {
             p {
-                .style--text (#fff, 32px, -0.4px, 0.8);
+                .style--text (@color2, 32px, -0.4px, 0.8);
                 padding-top: 100px;             
                 font-weight: 600;
                 text-align: center;
             }
             span {
-                .style--text (#fff, 14px, 0.1px, 4.9);
+                .style--text (@color2, 14px, 0.1px, 4.9);
                 text-align: center;
             }
         }
@@ -120,7 +111,7 @@
                     padding-left: 1.6%;
                     margin-top: 13px;
                     height: 30px;
-                    .style--text (#8f8f8f, 13px, 0, 2.34);
+                    .style--text (@color3, 13px, 0, 2.34);
                     font-weight: 400;
                     border: none; 
                     outline: 0;           
@@ -128,11 +119,11 @@
                 button {
                     width: 22%;
                     height: 58px;
-                    background-color: #0ca8c9;
+                    background-color: @color1;
                     border-radius: 30px;
                     margin-right: 8px;
                     float: right;
-                    .style--text (#fff, 16px, 0, 2);
+                    .style--text (@color2, 16px, 0, 2);
                     text-align: center;
                     border: none;
                     outline: 0;
@@ -152,7 +143,6 @@
             width: auto;
             height: 100%;
             margin: 0 auto;
-            box-sizing: border-box;
             li {
                 float: left;
                 display: block;
@@ -203,7 +193,7 @@
                         margin-right: -3%;
                     }
                     a {
-                        .style--text (#000, 18px, 0.2px, 1);
+                        .style--text (@color4, 18px, 0.2px, 1);
                         font-weight: 600;
                         text-transform: uppercase;
                         text-align: left;
@@ -211,14 +201,14 @@
                         width: 100%;
                         text-decoration: none;
                         &:hover {
-                            color: #0ca8c9;
+                            color: @color1;
                         }
                     }
                     div {
                         padding-top: 13px;
                         a {
                             display: block;
-                            .style--text (#8f8f8f, 13px, 0, 2.78);
+                            .style--text (@color3, 13px, 0, 2.78);
                             text-align: left;
                             text-transform: none;
                         }
@@ -250,7 +240,7 @@
                             line-height: 30px;
                             i {
                                 &:hover {
-                                    color: #0ca8c9;
+                                    color: @color1;
                                 }
                             } 
                         }
@@ -271,13 +261,13 @@
             text-align: center;
             font-size: 12px;
             line-height: 68px;
-            color: #8f8f8f;
+            color: @color3;
             font-weight: 500;
             font-family: 'Poppins';
             height: 100%;
             letter-spacing: 0.1px;
             a {
-                color: #0ca8c9;
+                color: @color1;
                 text-decoration: none;
             }
         }
