@@ -116,14 +116,20 @@
           padding: 0% 27% 0 27%;         
           li {
             width: 20%;
-            span {
-              line-height: 2;
-              font-size: 20px;
+            display: flex;
+            div {
+              display: inline;
+              margin: auto;
+              span {
+                line-height: 1.5;
+                font-size: 20px;
+              }
+              p {
+                margin-top: unset;
+                line-height: 1.5;
+              }
             }
-            p {
-              margin-top: unset;
-              line-height: 0;
-            }
+
           }
         }
       }
@@ -193,14 +199,9 @@
       }
     }
   }
-
   .footer-top {
     padding: 0 10%;
-    background: url(http://localhost/reponsive2/reponsive/assets/images/Background.png);
     max-height: unset;
-    h2 {
-      font-size: 2.5vw;
-    }
     &--img {
       ul {
         li {
@@ -222,6 +223,26 @@
     }
   }
   .footer-dow {
+    &__one {
+      &--div {
+        &--border {
+          padding-top: unset;
+          padding-left: 20px;
+          display: flex;
+          input {
+            padding-left: unset;
+            margin: auto;
+            width: 77%;
+          }
+          button {
+            margin: auto;
+            height: 86%;
+            border-radius: 50px;
+            width: 23%;
+          }
+        }
+      }
+    }
     &__two {
       padding: 0 10%;
       ul {
@@ -262,7 +283,7 @@
   }
 }
 
-// Reponsive cho màn 1024
+// Reponsive cho màn 1024px
 @media only screen and (max-width:1024px){
   .nav1 {
     padding: 0 4%;
@@ -348,6 +369,9 @@
           top: -35px;
           right: 15px;
         }
+        &:hover {
+          border-top: 50px solid #0ca8c9;
+        }
       }
       &--next {
         top: 47%;
@@ -356,6 +380,9 @@
         .fa-angle-right {
           top: 15px;
           right: 15px;
+        }
+        &:hover {
+          border-bottom: 50px solid #0ca8c9;
         }
       }
     }
@@ -395,12 +422,14 @@
       &--time{
         ul {        
           li {
-            span {
-              line-height: 1.5;
-              font-size: 18px;
-            }
-            p {
-              font-size: 10px;
+            div {
+              span {
+                font-size: 18px;
+                line-height: 1;
+              }
+              p {
+                font-size: 10px;
+              }
             }
           }
         }
@@ -434,9 +463,6 @@
   }
   .nav5 {
     padding: 0 4%;
-    &__right {
-      padding-top: 5%;
-    }
   }
   .nav6 {
     padding: 0px 4%;
@@ -459,6 +485,10 @@
   }
   .footer-top {
     padding: 0 4%;
+    h2 {
+      top: 16%;
+      left: 42%;
+    }
     &--img {
       ul {
         li {
@@ -490,6 +520,7 @@
       &--div {
         &--border {
           width: 80%;
+          height: 60px;
           input {
             font-size: 13px;
           }
@@ -587,7 +618,8 @@
     }
   }
   .nav2 {
-    padding: 0 2%;
+    padding: unset;
+    padding-left: 2%;
     &__over {
       span {
         font-size: 14px;
@@ -621,7 +653,7 @@
         width: unset;
         position: absolute;
         z-index: 1;
-        right: 10px;
+        right: 0px;
         height: auto;
         width: 100px;
         &:hover li {
@@ -631,13 +663,13 @@
           float: unset;
           width: unset;
           display: none;
+          text-align: center;
           &:hover {
-            background-color: yellowgreen;
+            background-color: darkseagreen;
           }          
           a {
             font-size: 14px;
             color: black;
-            text-align: right;
           }
           &:first-child {
             display: block;
@@ -684,6 +716,10 @@
               }
               p {
                 font-size: 12px;
+                overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
               }
             }
           }
@@ -714,7 +750,6 @@
         ul {        
           li {
             span {
-              line-height: 1.5;
               font-size: 18px;
             }
             p {
@@ -748,7 +783,6 @@
     }
     &__right {
       min-width: 100px;
-      padding-top: 30px;
     }
   }
   .nav6 {
@@ -774,15 +808,15 @@
     }
   }
   .footer-top {
+    background-repeat: repeat;
     padding: 0 2%;
     h2 {
-      top: 60px;
-      left: 38%;
-      font-size: 26px;
+      top: 3.2%;
+      left: 34%;
+      font-size: 5vw;
     }
     h3 {
-      font-size: 40px;
-      padding-top: 54px;
+      font-size: 8vw;
     }
     &--img {
       ul {
@@ -814,7 +848,8 @@
       &--text {
         p {
           font-size: 20px;
-          padding: 60px 0 20px
+          padding: 40px 0 20px;
+          line-height: 1.5;
         }
         span {
           margin-top: 10px;
@@ -823,13 +858,15 @@
         }
       }
       &--div {
+        padding-bottom: 5px;
         &--border {
-          width: 80%;
+          height: 50px;
           input {
-            font-size: 12px;
+            font-size: 11px;
           }
           button {
-            font-size: 13px;
+            font-size: 11px;
+            min-width: 100px;
           }
         }
       }
@@ -837,9 +874,15 @@
     &__two {
       padding: 0 2%;
       ul {
-        padding-left: 12%;
+        padding: 0 10%;
         li {
-          width: 28%;
+          width: 33.333%;
+          &:nth-child(4) {
+            float: left;
+          }
+          &:last-child {
+            float: right;
+          }
         }
       }
     }
@@ -851,6 +894,7 @@
         margin: 0 auto 0px 40px;
         ul {
           display: inline-block;
+          padding-top: 40px;
           li {
             &:first-child div{
               padding-top: 0px;
@@ -866,6 +910,12 @@
                 font-size: 11px;
               }
             }
+            &:nth-child(2) {
+              padding-left: 12%;
+            }
+            &:last-child {
+              padding-left: 12%;
+            }
             &:first-child {
               padding-right: 6%;
             }
@@ -873,16 +923,233 @@
         }
       }
     }
-    &__four {
-      padding: 0 4%;
+    &__four { 
+      height: unset;  
       p {
+        float: unset;
         font-size: 11px;
+        line-height: 48px;
       }
       .obito {
+        float: unset;
         a {
-          img {
-            width: 50%;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+// Reponsive cho màn hình 480px
+@media only screen and (max-width:480px) {
+  .logo {
+    &__right {
+      &--border {
+        height: 38px;
+        padding-left: 6px;
+        width: calc(100% - 100px);
+        select {
+          font-size: 10px;
+        }
+        input {
+          font-size: 10px;
+        }
+        button {
+          width: 16%;
+          height: 38px;
+
+        }
+      }
+      &--img {
+        padding-top: 6px;
+        width: 65px;
+        .fa-cog {
+          font-size: 24px;
+        }
+        .fa-shopping-cart {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .banner {
+    &__text {
+      p {
+        font-size: 10px;
+      }
+    }
+    &__a {
+      a {
+        font-size: 10px;
+      }
+    }
+    &__slide {
+      &--pew {
+        top: 30%;
+        width: 40px;
+        border-top: 40px solid #ffffff;
+        .fa-angle-left {
+          top: -30px;
+          right: 6px;
+        }
+        &:hover {
+          border-top: 40px solid #0ca8c9;
+        }
+      }
+      &--next {
+        top: 30%;
+        width: 40px;
+        border-bottom: 40px solid #ffffff;
+        .fa-angle-right {
+          top: 10px;
+          right: 10px;
+        }
+        &:hover {
+          border-bottom: 40px solid #0ca8c9;
+        }
+      }
+    }
+  }
+  .nav3 {
+    &__a {
+      ul {
+        li { 
+          a {
+            .nav3__a--text {
+              padding-top: 8px;
+              h2 {
+                font-size: 11px;
+              }
+              p {
+                font-size: 11px;
+              }
+            }
           }
+        }
+      }
+    }
+  }
+  .nav4 {
+    &__left {
+      &--time {
+        ul {
+          padding: 0% 20%;
+        }
+      }
+      &--text {
+        h4 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .nav5 {
+    &--text {
+      h3 {
+        top: 16px;
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+    }
+    &__right {
+      min-width: 80px;
+    }
+    .fas1 {
+      font-size: 26px;
+      line-height: 26px;
+      margin-left: 12px;
+    }
+  }
+  .nav6 {
+    &__img-top {
+      ul {
+        li {
+          div {
+            .nav6__img-top--a {
+              a {
+                font-size: 10px;
+                -webkit-line-clamp: 2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-top {
+    h2 {
+      top: 2.9%;
+    }
+    &--img {
+      ul {
+        li {
+          div {
+            .a-text {
+              font-size: 12px;
+            }
+            p {
+              font-size: 11px;
+              a {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-dow {
+    &__one {
+      padding: 0 2%;
+    }
+    &__three {
+      &--border {
+        margin-left: 20px;
+        ul {
+          padding-top: 20px;
+          li {
+            margin-bottom: 0;
+            &:first-child {
+              padding-right: 0;
+            }
+            &:nth-child(2) {
+              padding-left: 8%;
+            }
+            &:last-child {
+              padding-left: 8%;
+            }
+            .icon-mxh {
+              a {
+                padding-right: 18px;
+                font-size: 12px;
+              }
+            }
+            a.step1 {
+              padding-left: 20px !important;
+            }
+            a.step2 {
+              padding-left: 20px !important;
+            }
+            a.step3 {
+              padding-left: 20px !important;
+              overflow: hidden;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              display: -webkit-box;
+            }
+          }
+        }
+      }
+    }
+    .footer-dow {
+      &__four {
+        p {
+          font-size: 10px;
         }
       }
     }

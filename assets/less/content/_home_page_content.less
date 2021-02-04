@@ -235,13 +235,18 @@
   }
   &__right {
     float: right;
-    display: block;
+    display: flex;
     box-sizing: border-box;
     width: 20%;
     min-width: 120px;
     height: auto;
-    text-align: right;
-    padding-top: 7%;
+    
+    &--border {
+      text-align: right;
+      display: block;
+      margin: auto;
+      margin-right: 0px;
+    }
   }
 }
 //Phần nội dung của nav6 
