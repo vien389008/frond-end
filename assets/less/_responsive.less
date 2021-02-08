@@ -173,7 +173,7 @@
   }
   .nav6 {
     padding: 0px 10%;
-    max-height: none;
+    max-height: unset;
     &__img-top {
       ul {
         li {
@@ -604,7 +604,8 @@
         text-align: center;
         width: auto;
         img {
-          width: auto;
+          width: 60%;
+          max-width: 219px;
         }
       }
     }
@@ -624,7 +625,7 @@
   }
   .nav2 {
     padding: unset;
-    padding-left: 2%;
+    padding:0 2%;
     &__over {
       span {
         font-size: 14px;
@@ -671,7 +672,7 @@
           float: unset;
           width: unset;
           display: none;
-          text-align: center;
+          text-align: right;
           &:hover {
             background-color: darkseagreen;
           }          
@@ -972,7 +973,8 @@
       }
       &--img {
         padding-top: 6px;
-        width: 65px;
+        width: 70px;
+        padding-right: 5px;
         .fa-cog {
           font-size: 24px;
         }
@@ -1020,6 +1022,26 @@
       }
     }
   }
+  .nav2 {
+    &__over {
+      ul {
+        li {
+          width: 150px;
+          padding: 0px 15px;
+          &:first-child {
+            ul {
+              left: 150px;
+              width: 100px;
+              li {
+                width: 100px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
   .nav3 {
     &__a {
       ul {
