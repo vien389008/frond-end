@@ -1,0 +1,99 @@
+.top-banner .inner {
+    position: relative;
+    .banner-images {
+        width: 75.3%;
+        img {
+            width: 100%;
+        }
+    }
+
+    .banner-images:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 75.3%;
+        height: 100%;
+        background-image: linear-gradient(270deg, @color-014d93 0%, @color-e21936 100%);
+        opacity: 0.76;
+        border-top-right-radius: 5.2vw;
+        z-index: 3;
+    }
+
+    .light-blue-block {
+        width: 32.6%;
+        height: 36.46vw;
+        background-color: @color-9bdae9;
+        z-index: -1;
+        position: absolute;
+        top: 32.6%;
+        right: 0;
+        border-bottom-left-radius: 5.2vw;
+    }
+
+    .red-bar {
+        width: 67.4%;
+        height: 20px;
+        background-color:@color-e21936;
+        position: absolute;
+        bottom: -3.23vw;
+        left: 0;
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 52.4%;
+        left: 49.2%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        width: 100%;
+        max-width: 1140px;
+        .left {
+            width: 52.6%;
+            &__top {
+                .font_body(16px,1.67vw,@color-while,500,"Roboto",2.6px);
+                margin-bottom: 11px; 
+                text-transform: uppercase;
+            }
+
+            &__center {
+                .font_body(2.61vw,3.34vw,@color-while,900,"Lato",1.5px);
+                margin-bottom: 7.76vw;
+            }
+
+            &__bottom {
+                .font_body(1.146vw,2.084vw,@color-while,400,"Lato",0.7px); 
+            }
+        }
+    }
+
+    .banner-CTA {
+        position: absolute;
+        right: 4.11vw;
+        width: 24.5%;
+        top: 21%;
+        z-index: 3;
+        &__item {
+            height: 11.46vw;
+            filter: drop-shadow(0 0 11.5px rgba(0, 0, 0, 0.16));
+            background-color:@color-while;
+            padding: 1.823vw;
+            margin-bottom: 15px;
+            border-top-right-radius: 1.823vw;
+            border-left: 3px solid @color-e21936;
+            max-width: 100%;
+            .text {
+                .font_body(1.25vw,1.67vw,@color-black,900,"Lato",1px);
+                width: 40%;
+                span {
+                    .font_body(0.9375vw,1.67vw,@color-black,400,"Roboto",0.2px);
+                    font-style: italic;
+                }
+            }
+            
+            .icon {
+                position: absolute;
+                bottom: 2.08vw;
+            }
+        }
+    }
+}
